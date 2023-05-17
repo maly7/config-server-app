@@ -6,14 +6,16 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/spring-cloud-samples/config-repo
+          uri: https://github.com/spring-cloud-services-samples/cook-config
           repos:
             sample:
               uri: https://github.com/maly7/cloud-config-test
               pattern:
                 - 'coffee/default'
+                - 'coffee/dev'
               search-paths:
                 - '{application}'
+                - '{application}/{profile}'
 management:
   endpoints:
     web:
