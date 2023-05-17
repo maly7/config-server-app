@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+          repos:
+            sample:
+              uri: https://github.com/maly7/cloud-config-test
+              pattern:
+                - 'coffee/default'
+              search-paths:
+                - '{application}'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
